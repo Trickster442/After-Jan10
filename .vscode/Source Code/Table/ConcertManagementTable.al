@@ -50,8 +50,8 @@ table 50475 concertManagement_Table
         }
         field(6; Charge; Decimal)
         {
-            FieldClass = FlowField;
-            CalcFormula = lookup(artist_table.Charge where(Artist_ID = field(Artist)));
+            // FieldClass = FlowField;
+            // CalcFormula = lookup(artist_table.Charge where(Artist_ID = field(Artist)));
         }
     }
 

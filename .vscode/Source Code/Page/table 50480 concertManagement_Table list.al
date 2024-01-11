@@ -69,6 +69,24 @@ page 50477 concertManagement_Table_list
 
                 end;
             }
+            action(ChangeRate)
+            {
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    rate: Record concertManagement_Table;
+                begin
+                    rate.Reset();
+                    rate.SetRange(Manager_name, 'Blah Blah');
+                    if rate.FindFirst() then
+                        repeat
+                            rate.Charge := 10000;
+                            rate.Modify();
+                        until rate.Next() = 0;
+
+                end;
+            }
         }
     }
 
